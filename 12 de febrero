@@ -1,0 +1,55 @@
+###AirOassengers###
+install.packages("forecast")
+require (forecast)
+View(AirPassengers)
+help("AirPassengers")
+??AirPassengers
+class(AirPassengers) ##preguntamos qué tipo de datos es AirPassengers
+start(AirPassengers) ##ver cuándo empieza la serie de tiempo
+print(AirPassengers) ##imprime los datos
+length(AirPassengers)
+head (AirPassengers,n=8) ##muestra los primeros 8 datos de la serie de tiempo
+tail(AirPassengers, n=8)
+plot(AirPassengers)
+plot(AirPassengers,xlab="años",ylab="número de pasajeros")
+plot(AirPassengers, xlab="años", ylab="número de pasajeros", type="b")
+
+
+### ejercicio en clase ###
+## De la página del INEGI bajar la tasa de informalidad laboral en valores relativos a nivel nacional
+## todos los trimestres desde el 2005 al 2017, esta base, importarla a R y declararla serie de tiempo
+## con el inicio, fin, y frecuencia de la serie de tiempo.
+## Una vez que hayan declarado la serie, usar la función print, lenght, head y tail (con 10 datos) y 
+## explicarlas
+## Graficar la serie de tiempo con 3 tipos de gráficas diferentes y 3 colores, además investigar y usar
+## las funciones time, deltat, cycle y frequency y explicar para qué sirven
+informalidad <- read.csv("C://Users//USUARIO//Desktop//informalidad.csv")
+informalidad4 <- ts(informalidad, frequency = 4, start = 2005)
+frequency(informalidad4)
+end(informalidad4)
+start(informalidad4)
+
+print(informalidad4)
+length(informalidad4) ##nos dice que la serie de tiempo contiene un total de 51 datos 
+head(informalidad4, n=10)  ## Nos proporciona los primeros 10 datos, que van desde el primer 
+#trimestre de 2005 hasta el segundo trimestre de 2007
+tail(informalidad4, n=10)   ## Nos proporciona los últimos 10 datos, que van desde el segundo 
+#trimestre de 2015 hasta el tercer trimestre de 2017
+
+plot(informalidad4)
+plot(informalidad4, xlab="Año", ylab="Tasa de informalidad laboral", type="h", col="pink")  
+## nos muestra una gráfica de histograma en color rosa
+plot(informalidad4, xlab="Año", ylab="Tasa de informalidad laboral", type="p", col="blue")
+## nos muestra una gráfica de dispersión en color azul
+plot(informalidad4, xlab="Año", ylab="Tasa de informalidad laboral", type="s", col="violet")
+## nos muestra una gráfica de escalonada en color violeta
+
+help(time)
+time(informalidad4) ##nos muestra solamente una tabla que contiene los tiempos, es decir, el 
+#año y frecuencia de los datos
+help(deltat)
+deltat(informalidad4) ##nos dice que la serie está dividida en trimestres, es decir 0.25 de un año
+help(cycle)
+cycle(informalidad4) ##nos muestra el vector de ciclos de los datos
+help("frequency")
+frequency(informalidad4)  ##nos muestra la frecuencia de los datos
