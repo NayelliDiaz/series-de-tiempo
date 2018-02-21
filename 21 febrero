@@ -1,0 +1,7 @@
+Partidos <- c(36, 44, 40, 46, 46, 40, 49, 41, 40)
+Canastas <- c(13, 20, 20, 20, 20, 28, 21, 22, 31)
+n<- length(Partidos)
+Covar <- sum((Partidos-mean(Partidos))*(Canastas-mean(Canastas)))/(n-1)
+Covar
+Correlacion <- Covar/(sd(Partidos)*sd(Canastas))
+Correlacion
