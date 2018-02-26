@@ -1,0 +1,45 @@
+---
+title: "ST 230218"
+author: "Nayelli"
+date: "23 de febrero de 2018"
+output: html_document
+---
+
+##Modelo Aditivo
+sample sirve para generar números aleatorios dentro de un intervalo 
+
+decompose descompone la serie de tiempo
+
+```{r}
+serie1 <- sample(300:1000, 120)
+tserie1 <- ts(serie1, frequency = 12, start = 2002)
+tdesco <- decompose(tserie1)
+plot(tdesco)
+names(tdesco)
+tdesco$x
+tdesco$seasonal
+tdesco$trend
+tdesco$random
+56.282022 + 736.4583+168.259645
+
+
+```
+
+##TAREA
+
+Bajar el PIB (tasa de credimiento anual del PIB) de México desde 1950 hasta 2015
+
+Dividir la gráfica en 2 series de tiempo 1. 1950-1980 2. 1981-2015
+
+Hacer una gráfica general de la serie de tiempo (1950 a 2015)
+
+Mostrar las tres gráficas en una misma semana, todas con título principal, 
+  etiqueta de eje x, subtítulo (fuente) y colores diferentes
+
+Descomponer las tres series y comprobar que son igual a tendencia, estacionalidad y aleatorio en
+  año 1980, 2000 y 2015 
+
+Interpretar y analizar las gráficas (análisis asociado a aspectos económicos y políticos)
+
+
+
