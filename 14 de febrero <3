@@ -1,0 +1,64 @@
+aa <- AirPassengers
+plot(aa)
+plot(aggregate(aa)) ##con el aggregate se muestra la tendencia de la serie de tiempo
+#es decir, se quitan los picos
+boxplot(aa~cycle (aa))  ##gráfica de caja por periodo de la serie de tiempo
+
+deso <- read.csv("C://Users//USUARIO//Desktop//desocupa.csv")
+desots <- ts(deso, frequency = 4, start = 2005)  
+##si inicia en un periodo diferente al primero se usa start= c(2005, 3)  para tercer trimestre
+deseanual <- aggregate(desots)/4  ##para tener la tasa de desempleo anual (porque 4 trimestres)
+x11() ##para abrir una ventana 
+layout(1:2) ##para ver una ventana con las dos gráficas 
+plot(desots)
+plot(deseanual)
+
+deso1 <- window(desots, start = c(2008,2), end = c(2015,4))  ##window permite cortar la serie de tiempo
+# para analizar el periodo de estudio que se desee
+
+tasas <- read.csv("C://Users//USUARIO//Desktop//tasas.csv")
+topdts <- ts(tasas[ ,1], frequency=4, start=2005)   ## [#, ##] con # extraes algunos renglones, con ## extraes las columnas
+ttats <- ts(tasas[ ,2], frequency=4, start=2005)  
+tilts <- ts (tasas[ ,3], frequency=4, start=2005)
+## ts.intersect sirve para hacer una serie de tiempo múltiple
+multiple <- ts.intersect(topdts,ttats, tilts)  
+x11()
+plot(multiple)
+
+##############################  EJERCICIO    #######################################
+# Obtener 4 series de tiempo con mínimo 30 datos, las series de tiempo tienen que tener sustento para
+# compararlas  1) importarlas, declararlas como serie de tiempo (separadas), graficarlas, crear una
+# serie de tiempo múltiple y graficarlas como serie de tiempo múltiple 
+
+finanzas <- read.csv("C://Users//USUARIO//Desktop//finanzas.csv")
+Deudats <- ts(finanzas[,1], frequency = 12, start = 2010)
+Recaudacionts <- ts(finanzas[,2], frequency = 12, start = 2010)
+Gastots <- ts(finanzas[,3], frequency = 12, start = 2010)
+Ingresots <-ts(finanzas[,4], frequency = 12, start = 2010)
+x11()
+layout(1:4)
+plot(Deudats)
+plot(Recaudacionts)
+plot(Gastots)
+plot(Ingresots)
+mult <- ts.intersect(Deudats, Recaudacionts, Gastots, Ingresots)
+plot(mult)
+# dividir dos de estas series de tiempo en 3 periodos de intervalos iguales
+gasto1 <- window(Gastots, start= 2010, end = c(2012,11))
+ingreso1 <- window(Ingresots, start= 2010, end = c(2012,11))
+layout(1:2)
+plot(gasto1)
+plot(ingreso1)
+gasto2 <- window(Gastots, start= c(2012,11), end= c(2015,11))
+ingreso2 <-window(Ingresots, start= c(2012,11), end= c(2015,11))
+gasto3 <- window(Gastots, start= c(2015,11), end= c(2017,11))
+ingreso3 <-window(Ingresots, start= c(2015,11), end= c(2017, 11))
+# elegir 2 series de tiempo y aplicar aggregate para conocer su tendencia
+# hacer las gráficas de caja e interpretar los periodos de estas series 
+plot(aggregate(Gastots))
+plot(aggregate(Ingresots))
+boxplot(Gastots~cycle (Gastots))
+boxplot(Ingresots~cycle (Ingresots))
+ ## se puede observar que ambas series de tiempo tienen una tendencia a la alza, en el caso del ingreso
+# este comportamiento inicia en 2012, por otro lado, para el gasto, se ve un incremento más marcado a partir
+# del año 2013
