@@ -1,0 +1,74 @@
+---
+title: "ST 280218"
+author: "Nayelli"
+date: "28 de febrero de 2018"
+output: html_document
+---
+
+##TAREA
+
+Bajar el PIB (tasa de credimiento anual del PIB) de México desde 1950 hasta 2015
+
+Dividir la gráfica en 2 series de tiempo 1. 1950-1980 2. 1981-2015
+
+Hacer una gráfica general de la serie de tiempo (1950 a 2015)
+
+Mostrar las tres gráficas en una misma , todas con título principal, etiqueta de eje x, subtítulo (fuente) y colores diferentes
+
+Descomponer las tres series y comprobar que son igual a tendencia, estacionalidad y aleatorio en año 1980, 2000 y 2015 
+
+Interpretar y analizar las gráficas (análisis asociado a aspectos económicos y políticos)
+
+```{r}
+PIB<-read.csv("C://Users//Alumno.SALAE-16//Desktop//PIB.csv")
+tspib <- ts(PIB, frequency = 1, start = 1961)
+x11() 
+layout(1:3) 
+PIB1 <- window(tspib, start = c(1961), end = c(1980)) 
+PIB2 <- window(tspib, start = c(1980))
+plot(PIB1, col="green", main="PIB 1961-1980", xlab="Año", ylab="Crecimiento del PIB")
+plot(PIB2, col="orange", main="PIB 1980-2016", xlab="Año", ylab="Crecimiento del PIB")
+plot(tspib, col="yellow", main="PIB 1961-2016", xlab="Año", ylab="Crecimiento del PIB")
+
+P1 <- ts(PIB1, frequency = 2, start=1961, end = 1970)
+P2 <- ts(PIB2, frequency = 2, start=1971)
+P <- ts(PIB, frequency = 2, start = 1961)
+plot (P)
+p11 <- decompose(P1)
+names(p11)
+p11$x
+p11$seasonal
+p11$trend
+p11$random
+
+#1980
+ 0.5950572+6.365613+-0.458186555
+ 6.502484
+plot(p11)
+
+p22 <- decompose(P2)
+names(p22)
+p22$x
+p22$seasonal
+p22$trend
+p22$random
+
+#2000
+ 4.1982933
+ -0.6259448 + 3.6775827+ 1.14665538
+plot(p22)
+
+
+PP <- decompose(P)
+names(PP)
+PP$x
+PP$seasonal
+PP$trend
+PP$random
+
+#2015
+2.6497074
+-0.6526123+ 2.4638374+0.838482339
+plot(PP)
+
+##
