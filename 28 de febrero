@@ -1,0 +1,36 @@
+---
+title: "28 de febrero"
+author: "Nayelli Díaz"
+date: "28 de febrero de 2018"
+output: html_document
+---
+
+#Promedios Móviles
+Los promedios móviles es un método clásico para descomponer series de tiempo, fue creado en 1920; este método todavía se utiliza para algunos modelos de series de tiempo, por lo que es importante conocerlo
+
+En este método de descomposición se utiliza el método de promedios móviles para estimar la tendencia suavizado de medias móviles. Un promedio móvil de orden m se define
+
+.,,,,,,,,,..,                              .,,,,,,,,,,,. .,  ,,,,,,,,,,
+
+```{r}
+#install.packages("forecast")
+require(forecast)
+crim1 <- c(12632, 13607, 12160, 13335, 14553, 14654, 12791, 11923, 10225, 9847)
+tscrim <- ts(crim1, start = 1980)
+ma(tscrim, order=5)
+
+ma5crim <- c(NA,NA, 13257.4, 13661.8, 13498.6, 13451.2, 12829.2, 11888.0, NA, NA)
+macrim <- data.frame(crim1, ma5crim)
+
+
+```
+
+En el data frame de la segunda columna se tiene el promedio móvil de orden 5 que expone un estimado de la tendencia, el primer valor es el promedio de las primeras 5 observaciones, el segundo valor corresponde al promedio de los valores de 1981 a 1985 y así sucesivamente; no existen valores paralos dos primeros años ni para los últimos dos debido a que no existen datos para estos valores por ser un promedio móvil de orden 5, en la ecuación expuesta si m=5, entonces k=2, m=2(k)
+
+#Gráfica 
+```{r, echo=FALSE}
+plot(tscrim, main="Crimen en México, orden 5", ylab="Millones de personas", xlab="años")
+lines(ma(tscrim,5),col="red")
+```
+Como se puede observar en la gráfica, la tendencia se observa de color rojo y está más suavizada que la serie, el principal movimiento se detecta sin todos los pequeños cambios. El promedio móvil no estima la tendencia al inicio y al final del la serie, después hay métodos que si permiten estimar el inicio y el final de la tendencia. El orden de promedios móviles determina el suavizado de la tendencia, en general un orden grande significa una curva más suavizada
+
