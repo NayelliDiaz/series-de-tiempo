@@ -1,0 +1,92 @@
+---
+title: "PRONÓSTICOS"
+author: "Nayelli Díaz"
+date: "7 de marzo de 2018"
+output: html_document
+---
+
+#MODELOS LINEALES PARA PRONOSTICAR
+
+Son la aplicación de pronósticos lineales como los métodos de la media, el ingenuo y el ingenuo estacional y el de deriva del pronóstico
+
+#INGENUO
+Está basado en la última observación que arroja la serie de tiempo.
+
+Es decir, este pronóstico asume que la observación más importante es la última 
+
+##Función en R
+
+naive <- (serie, h= num pronósticos)
+
+ h= número de pronósticos que requiero
+
+#MÉTODO DE LA MEDIA
+Este método le da el mismo peso a todos los datos u observaciones, se asume que con este método, todas las observaciones tienen la misma importancia, por lo que el pronóstico es un promedio de todas las observaciones
+
+#Función en R
+
+meanf <- (serie, h=número de pronósticos)
+
+#INGENUO ESTACIONAL
+Este método se utiliza en Series de Tiempo con alta estacionalidad, este proceso consiste en darle el mayor peso a la mayor ponderación del dato del mismo periodo en el año anterior.
+
+Por ejemplo, trimestre 2 del año 2005 es igual al trimestre 2 del año 2006
+
+#Función en R
+snaive(serie, h=número de pronósticos)
+
+#MÉTODO DE LA DERIVA
+Este método consiste en que el pronóstico puede incrementar o reducirse sobre el tiempo, dependiendo del promedio de los cambios históricos de la Serie de Tiempo
+
+#Función en R
+rwf(serie, h=número de pronóstico, drift = TRUE)
+
+#EJERCICIO PIB
+
+```{r}
+
+des0 <- read.csv("C://Users//USUARIO//Desktop//TDD.csv")
+dests <- ts(des0, start = 2005, frequency = 4)
+#install.packages("fpp")
+require (fpp) #paquetería fpp 
+
+desocmod1 <- meanf(dests, h=10)
+desocmod2 <- naive(dests, h=10)
+desocmod3 <- snaive(dests, h=10)
+desocmod4 <- rwf(dests, h=10, drift = TRUE)
+
+X11
+plot(desocmod1, main = "Tasa de desocupación trimestral", col="pink")
+lines(desocmod1$mean, col="green") #media
+lines(desocmod2$mean, col="blue") #ingenuo
+lines(desocmod3$mean, col="black") #ingenuo estacional
+lines(desocmod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+
+
+```
+
+#Datos Ajustados
+
+```{r, echo=FALSE}
+x11()
+plot(desocmod1, main = "Tasa de desocupación trimestral", col = "pink")
+lines(desocmod1$fitted, col="green") #media
+lines(desocmod2$fitted, col="blue") #ingenuo
+lines(desocmod3$fitted, col="black") #ingenuo estacional
+lines(desocmod4$fitted, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+
+names(desocmod1)
+
+```
+Dentro del modelo desocmod1 hay muchas variables que nos arroja, entre ellos, los datos ajustados (fitted) y los residuales (resta de datos reales o X y datos ajustados)
+
+
+#TAREA
+
+BANAMEX
+
+Aplicar los 4 métodos de pronósticos y graficarlos según las gráficas, elegir qué método es el mejor para pronosticar y también graficar los datos ajustados y planteen según su gráfica cuál es el método que mejor ajusta a los datos reales
+
+DECISIÓN CON BASE A LA GRÁFICA DE LOS PRONÓSTICOS
