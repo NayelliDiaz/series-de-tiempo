@@ -1,0 +1,55 @@
+---
+title: "TAREA Banamex"
+author: "Nayelli Díaz"
+date: "9 de marzo de 2018"
+output: html_document
+---
+
+#TAREA
+
+BANAMEX
+
+Aplicar los 4 métodos de pronósticos y graficarlos según las gráficas, elegir qué método es el mejor para pronosticar y también graficar los datos ajustados y planteen según su gráfica cuál es el método que mejor ajusta a los datos reales
+
+DECISIÓN CON BASE A LA GRÁFICA DE LOS PRONÓSTICOS
+
+```{r}
+banamex <- read.csv("C://Users//USUARIO//Desktop//Banamex.csv")
+banamexts <- ts(banamex, start = 2017, frequency = 244)
+#install.packages("fpp")
+require (fpp) #paquetería fpp 
+
+banamexmod1 <- meanf(banamexts, h=30)
+banamexmod2 <- naive(banamexts, h=30)
+banamexmod3 <- snaive(banamexts, h=30)
+banamexmod4 <- rwf(banamexts, h=30, drift = TRUE)
+
+X11
+plot(banamexmod1, main = "Precio de cierre BANAMEX 2017", col="pink")
+lines(banamexmod1$mean, col="green") #media
+lines(banamexmod2$mean, col="blue") #ingenuo
+lines(banamexmod3$mean, col="black") #ingenuo estacional
+lines(banamexmod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+
+
+```
+
+
+#Datos Ajustados
+
+```{r, echo=FALSE}
+x11()
+plot(banamexmod1, main = "Precio de cierre BANAMEX 2017", sub= "Datos ajustados", col = "pink")
+lines(banamexmod1$fitted, col="green") #media
+lines(banamexmod2$fitted, col="blue") #ingenuo
+lines(banamexmod3$fitted, col="black") #ingenuo estacional
+lines(banamexmod4$fitted, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+
+names(banamexmod1)
+
+```
+A partir de la gráfica observada, puedo asegurar que el mejor modelo para este caso es el ingenuo estacional, graficado en color negro, pues pronostica precios de cierre inestables, que son más cercanos a la realidad; en comparación con los otros pronósticos que predicen precios constantes o poco variables
+
+En cuanto a la  gráfica con los datos ajustados, el modelo que más se ajusta con los datos reales es el método de la deriva, pues de la misma forma, es el que considera que los datos son variables
