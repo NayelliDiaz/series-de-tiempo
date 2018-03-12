@@ -1,0 +1,111 @@
+## TASA DE DESOCUPACIÓN
+
+install.packages("foreign")
+require(foreign)
+##Primer Trimestre 2005
+sdemt051<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt105.dbf"))
+deso <- subset(sdemt051,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt051,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20051 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20051
+
+##Segundo Trimestre 2005
+sdemt052<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt205.dbf"))
+deso <- subset(sdemt052,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt052,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20052 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20052
+
+##Tercer Trimestre 2005
+sdemt053<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt305.dbf"))
+deso <- subset(sdemt053,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt053,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20053 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20053
+
+##Cuarto Trimestre 2005
+sdemt054<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt405.dbf"))
+deso <- subset(sdemt054,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt054,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20054 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20054
+
+##Primer Trimestre 2006
+sdemt061<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt106.dbf"))
+deso <- subset(sdemt061,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt061,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20061 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20061
+
+##Segundo Trimestre 2006
+sdemt062<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt206.dbf"))
+deso <- subset(sdemt062,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt062,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20062 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20062
+
+##Tercer Trimestre 2006
+sdemt063<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt306.dbf"))
+deso <- subset(sdemt063,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt063,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20063 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20063
+
+##Cuarto Trimestre 2006
+sdemt064<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt406.dbf"))
+deso <- subset(sdemt064,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt064,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20064 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20064
+
+##Primer Trimestre 2007
+sdemt071<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt107.dbf"))
+deso <- subset(sdemt071,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt071,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20071 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20071
+
+##Segundo Trimestre 2007
+sdemt072<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt207.dbf"))
+deso <- subset(sdemt072,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt072,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20072 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20072
+
+##Tercer Trimestre 2007
+sdemt073<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt307.dbf"))
+deso <- subset(sdemt073,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt073,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20073 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20073
+
+##Cuarto Trimestre 2007
+sdemt074<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt407.dbf"))
+deso <- subset(sdemt073,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
+ocu <- subset(sdemt073,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
+ocupados <-nrow(ocu)
+desocupados <-nrow(deso)
+TasaDesocupacion20074 <- ((desocupados/ocupados)*100)
+TasaDesocupacion20074
