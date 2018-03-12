@@ -1,4 +1,4 @@
-##TASA DE DESOCUPACIÓN
+## TASA DE ASALARIADOS
 
 install.packages("foreign")
 require(foreign)
