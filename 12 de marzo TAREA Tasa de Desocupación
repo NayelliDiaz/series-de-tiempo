@@ -6,8 +6,8 @@ require(foreign)
 sdemt051<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt105.dbf"))
 deso <- subset(sdemt051,ENT==20 & CLASE3==6) # 20=Oaxaca, 6= Desocupados en búsqueda
 ocu <- subset(sdemt051,ENT==20 & as.numeric(EDA)<=66 & as.numeric(EDA)>=16)
-ocupados <-nrow(ocu)
-desocupados <-nrow(deso)
+ocupados <-nrow(ocu) ##devuelve el número de ocupados 
+desocupados <-nrow(deso) 
 TasaDesocupacion20051 <- ((desocupados/ocupados)*100)
 TasaDesocupacion20051
 
