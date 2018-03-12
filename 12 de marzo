@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+author: "Nayelli Díaz"
+date: "12 de marzo de 2018"
+output: html_document
+---
+
+Primero tenemos que acomodar los datos obtenidos a partir del INEGI en forma de matriz y acomodarlos en un solo vector que agrupe años
+
+```{r}
+accidentes <- read.csv("C://Users//USUARIO//Downloads//accidentes.csv")
+
+accidentes <- accidentes[-1,]
+accidentes <- accidentes[,-1]
+trs <- t(t(accidentes))
+ctrs <- c(trs)
+accts <- ts(ctrs, frequency = 12, start = 1997)
+
+
+```
