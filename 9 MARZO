@@ -1,0 +1,114 @@
+---
+title: "acciones"
+author: "Nayelli Díaz"
+date: "9 de marzo de 2018"
+output: html_document
+---
+
+#ACCIONES
+
+```{r}
+acciones <- read.csv("C://Users//USUARIO//Desktop//Acciones.csv")
+netflix <- ts(acciones[,1], start = c(2017,66), end = c(2018,66), frequency = 244)
+bimbo <- ts(acciones[,2], start = c(2017,66), end = c(2018,66), frequency = 244)
+televisa <- ts(acciones[,3], start = c(2017,66), end = c(2018,66), frequency = 244)
+banorte <- ts(acciones[,4], start = c(2017,66), end = c(2018,66), frequency = 244)
+invex <- ts(acciones[,5], start = c(2017,66), end = c(2018,66), frequency = 244)
+cemex <- ts(acciones[,6], start = c(2017,66), end = c(2018,66), frequency = 244)
+
+install.packages("fpp")
+require(fpp)
+
+
+```
+#NETFLIX
+```{r, echo=FALSE}
+netflixmod1 <- meanf(netflix, h=30)
+netflixmod2 <- naive(netflix, h=30)
+netflixmod3 <- snaive(netflix, h=30)
+netflixmod4 <- rwf(netflix, h=30, drift = TRUE)
+
+X11
+plot(netflixmod1, main = "Precio de cierre NETFLIX 2017", col="pink")
+lines(netflixmod1$mean, col="green") #media
+lines(netflixmod2$mean, col="blue") #ingenuo
+lines(netflixmod3$mean, col="black") #ingenuo estacional
+lines(netflixmod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+
+```
+#BIMBO
+```{r, echo=FALSE}
+bimbomod1 <- meanf(bimbo, h=30)
+bimbomod2 <- naive(bimbo, h=30)
+bimbomod3 <- snaive(bimbo, h=30)
+bimbomod4 <- rwf(bimbo, h=30, drift = TRUE)
+
+X11
+plot(bimbomod1, main = "Precio de cierre BIMBO 2017", col="pink")
+lines(bimbomod1$mean, col="green") #media
+lines(bimbomod2$mean, col="blue") #ingenuo
+lines(bimbomod3$mean, col="black") #ingenuo estacional
+lines(bimbomod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+
+```
+#TELEVISA
+```{r, echo=FALSE}
+televisamod1 <- meanf(televisa, h=30)
+televisamod2 <- naive(televisa, h=30)
+televisamod3 <- snaive(televisa, h=30)
+televisamod4 <- rwf(televisa, h=30, drift = TRUE)
+
+X11
+plot(televisamod1, main = "Precio de cierre TELEVISA 2017", col="pink")
+lines(televisamod1$mean, col="green") #media
+lines(televisamod2$mean, col="blue") #ingenuo
+lines(televisamod3$mean, col="black") #ingenuo estacional
+lines(televisamod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+```
+#BANORTE
+```{r, echo=FALSE}
+banortemod1 <- meanf(banorte, h=30)
+banortemod2 <- naive(banorte, h=30)
+banortemod3 <- snaive(banorte, h=30)
+banortemod4 <- rwf(banorte, h=30, drift = TRUE)
+
+X11
+plot(banortemod1, main = "Precio de cierre BANORTE 2017", col="pink")
+lines(banortemod1$mean, col="green") #media
+lines(banortemod2$mean, col="blue") #ingenuo
+lines(banortemod3$mean, col="black") #ingenuo estacional
+lines(banortemod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+```
+#INVEX
+```{r, echo=FALSE}
+invexmod1 <- meanf(invex, h=30)
+invexmod2 <- naive(invex, h=30)
+invexmod3 <- snaive(invex, h=30)
+invexmod4 <- rwf(invex, h=30, drift = TRUE)
+
+X11
+plot(invexmod1, main = "Precio de cierre INVEX 2017", col="pink")
+lines(invexmod1$mean, col="green") #media
+lines(invexmod2$mean, col="blue") #ingenuo
+lines(invexmod3$mean, col="black") #ingenuo estacional
+lines(invexmod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
+```
+#CEMEX
+```{r, echo=FALSE}
+cemexmod1 <- meanf(cemex, h=30)
+cemexmod2 <- naive(cemex, h=30)
+cemexmod3 <- snaive(cemex, h=30)
+cemexmod4 <- rwf(cemex, h=30, drift = TRUE)
+
+X11
+plot(cemexmod1, main = "Precio de cierre INVEX 2017", col="pink")
+lines(cemexmod1$mean, col="green") #media
+lines(cemexmod2$mean, col="blue") #ingenuo
+lines(cemexmod3$mean, col="black") #ingenuo estacional
+lines(cemexmod4$mean, col="purple") #deriva
+legend("topleft", lty = 1, col = c("green", "blue", "black", "purple"), legend = c("media", "ingenuo", "ingenuo estacional", "deriva"))
