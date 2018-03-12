@@ -1,0 +1,113 @@
+##TASA DE DESOCUPACIÓN
+
+install.packages("foreign")
+require(foreign)
+##Primer Trimestre 2005
+sdemt051<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt105.dbf"))
+asal <- subset(sdemt105,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt105,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados051 <- (asalariados/ocupados)*100
+TasaAsalariados051
+
+##Segundo 
+sdemt052<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt205.dbf"))
+asal <- subset(sdemt205,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt205,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados052 <- (asalariados/ocupados)*100
+TasaAsalariados052
+
+##Tercero 
+sdemt053<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt305.dbf"))
+asal <- subset(sdemt305,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt305,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados053 <- (asalariados/ocupados)*100
+TasaAsalariados053
+
+##Cuarto
+sdemt054<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt405.dbf"))
+asal <- subset(sdemt405,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt405,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados054 <- (asalariados/ocupados)*100
+TasaAsalariados054
+
+##2006
+##Primero
+sdemt061<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt106.dbf"))
+asal <- subset(sdemt106,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt106,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados061 <- (asalariados/ocupados)*100
+TasaAsalariados061
+
+##Segundo 
+sdemt062<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt206.dbf"))
+asal <- subset(sdemt206,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt206,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados062 <- (asalariados/ocupados)*100
+TasaAsalariados062
+
+##Tercero
+sdemt063<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt306.dbf"))
+asal <- subset(sdemt306,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt306,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados063 <- (asalariados/ocupados)*100
+TasaAsalariados063
+
+##Cuarto 
+sdemt064<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt406.dbf"))
+asal <- subset(sdemt406,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt406,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados064 <- (asalariados/ocupados)*100
+TasaAsalariados064
+
+##2007
+##Primero
+sdemt071<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt107.dbf"))
+asal <- subset(sdemt107,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt107,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados071 <- (asalariados/ocupados)*100
+TasaAsalariados071
+
+##Segundo 
+sdemt072<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt207.dbf"))
+asal <- subset(sdemt207,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt207,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados072 <- (asalariados/ocupados)*100
+TasaAsalariados072
+
+##Tercero
+sdemt073<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt307.dbf"))
+asal <- subset(sdemt307,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt307,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados073 <- (asalariados/ocupados)*100
+TasaAsalariados073
+
+##Cuarto 
+sdemt074<- data.frame(read.dbf("C://Users//Alumno.SALAE11//Desktop//Tasas//sdemt407.dbf"))
+asal <- subset(sdemt407,ENT==20 & MH_COL==2)
+ocu <- subset(sdemt407,ENT==20 & CLASE2==1)
+ocupados <-nrow(ocu)
+asalariados <-nrow(asal)                  
+TasaAsalariados074 <- (asalariados/ocupados)*100
+TasaAsalariados074
