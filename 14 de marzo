@@ -1,0 +1,42 @@
+---
+title: "Accidentes de Tráfico"
+author: "Nayelli"
+date: "14 de marzo de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+acci <- read.csv("C://Users//USUARIO//Desktop//accidentes.csv")
+acci <- acci[5:16, ]
+acci <- acci[,-1 ]
+trs <- t(t(acci))
+ctrs <- c(trs)
+accts <- ts(ctrs, frequency = 12, start = 1997)
+accts
+#install.packages("fpp")
+
+require(fpp)
+```
+
+#Suavizado exponencial simple (SES)
+
+
+```{r cars}
+#x11()
+plot(accts)
+
+mod1 <- ses(accts, alpha = .1, h=12)
+mod2 <- ses(accts, alpha = .5, h=12)
+mod3 <- ses(accts, alpha = .9, h=12)
+
+names(mod1)
+
+plot(mod1, ylab = "Accidentes", xlab= "Año", main = "Número de Accidentes", type = "o")
+lines(mod1$mean, col= "pink", type="o")
+lines(mod2$mean, col= "green", type="o")
+lines(mod3$mean, col= "navy", type="o")
+
+legend("topleft", lty = 1, col = c("black", "pink","green", "navy"), c("datos originales", expression (alpha==.1), expression(alpha==.5), expression(alpha==.9)), pch = 1) 
+
+```
+En la gráfica vemos un pronóstico muy lineal 
