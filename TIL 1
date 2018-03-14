@@ -1,0 +1,124 @@
+#2005
+informal105 <- subset(sdemt105,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals105<-nrow(informal105)
+pobocups105<- nrow(pobocup105)
+til1105<-(informals105/pobocups105)*100
+til1105 
+
+informal205 <- subset(sdemt205,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals205<-nrow(informal205)
+pobocups205<- nrow(pobocup205)
+til1205<-(informals205/pobocups205)*100
+til1205 
+
+informal305 <- subset(sdemt305,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals305<-nrow(informal305)
+pobocups305<- nrow(pobocup305)
+til1305<-(informals305/pobocups305)*100
+til1305 
+
+informal405 <- subset(sdemt405,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals405<-nrow(informal405)
+pobocups405<- nrow(pobocup405)
+til1405<-(informals405/pobocups405)*100
+til1405 
+
+#2006
+informal106 <- subset(sdemt106,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals106<-nrow(informal106)
+pobocups106<- nrow(pobocup106)
+til1106<-(informals105/pobocups106)*100
+til1106 
+
+informal206 <- subset(sdemt206,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals206<-nrow(informal206)
+pobocups206<- nrow(pobocup206)
+til1206<-(informals205/pobocups205)*100
+til1206 
+
+informal306 <- subset(sdemt306,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals306<-nrow(informal306)
+pobocups306<- nrow(pobocup306)
+til1306<-(informals306/pobocups306)*100
+til1306 
+
+informal406 <- subset(sdemt406,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals406<-nrow(informal406)
+pobocups406<- nrow(pobocup406)
+til1406<-(informals406/pobocups406)*100
+til1406 
+
+#2007
+informal107 <- subset(sdemt107,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals107<-nrow(informal107)
+pobocups107<- nrow(pobocup107)
+til1107<-(informals107/pobocups107)*100
+til1107 
+
+informal207 <- subset(sdemt207,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals207<-nrow(informal207)
+pobocups207<- nrow(pobocup207)
+til1207<-(informals207/pobocups207)*100
+til1207 
+
+informal307 <- subset(sdemt307,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals307<-nrow(informal307)
+pobocups307<- nrow(pobocup307)
+til1307<-(informals307/pobocups307)*100
+til1307 
+
+informal407 <- subset(sdemt406,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals407<-nrow(informal407)
+pobocups407 <- nrow(pobocup407)
+til1407<-(informals407/pobocups407)*100
+til1407 
+
+#2008
+informal108 <- subset(sdemt108,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals108<-nrow(informal108)
+pobocups108<- nrow(pobocup108)
+til1108<-(informals108/pobocups108)*100
+til1108 
+
+informal208 <- subset(sdemt208,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals208<-nrow(informal208)
+pobocups208<- nrow(pobocup208)
+til1208<-(informals208/pobocups208)*100
+til1208 
+
+informal308 <- subset(sdemt308,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals308<-nrow(informal308)
+pobocups308<- nrow(pobocup308)
+til1308<-(informals308/pobocups308)*100
+til1308 
+
+informal408 <- subset(sdemt408,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals408<-nrow(informal408)
+pobocups408<- nrow(pobocup408)
+til1408<-(informals408/pobocups408)*100
+til1408 
+
+#2009
+informal109 <- subset(sdemt109,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals109<-nrow(informal109)
+pobocups109<- nrow(pobocup109)
+til1109<-(informals109/pobocups109)*100
+til1109 
+
+informal209 <- subset(sdemt209,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals209<-nrow(informal209)
+pobocups209<- nrow(pobocup209)
+til1209<-(informals209/pobocups209)*100
+til1209 
+
+informal309 <- subset(sdemt309,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals309<-nrow(informal309)
+pobocups309<- nrow(pobocup309)
+til1309<-(informals309/pobocups309)*100
+til1309 
+
+informal409 <- subset(sdemt409,ENT==14 & TUE2==5)# TUE2==5 - sector informal
+informals409<-nrow(informal409)
+pobocups409<- nrow(pobocup409)
+til1409<-(informals409/pobocups409)*100
+til1409 
